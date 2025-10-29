@@ -11,6 +11,9 @@ app.use(express.json());
 
 app.use('/api', formSubmitRoute); // POST to /api/submit-form
 
+// Serve .well-known for Android App Links
+app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
+
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/{*all}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
