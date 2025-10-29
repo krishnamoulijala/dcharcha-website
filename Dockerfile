@@ -28,7 +28,7 @@ RUN npm ci --only=production --prefer-offline --no-audit
 COPY --from=builder /app/dist ./dist
 COPY server.js ./
 COPY routes ./routes
-COPY config ./config
+#COPY config ./config
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
