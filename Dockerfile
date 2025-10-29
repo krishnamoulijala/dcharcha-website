@@ -29,7 +29,7 @@ RUN npm ci --only=production --prefer-offline --no-audit && npm cache clean --fo
 COPY --from=builder /app/dist ./dist
 COPY server.js ./
 COPY routes ./routes
-COPY config ./config
+#COPY config ./config
 COPY public/.well-known ./.well-known
 
 # Create non-root user for security
