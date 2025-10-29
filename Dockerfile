@@ -1,48 +1,46 @@
+# ================================
 # Build stage
+# ================================
 FROM node:18-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package*.json ./
 RUN npm ci --prefer-offline --no-audit
 
-# Copy source code
+# Copy source code and build
 COPY . .
-
-# Build frontend
 RUN npm run build
 
+# ================================
 # Production stage
-FROM node:18-alpine
+# ================================
+FROM node:18-alpine AS production
 
-# Set working directory
 WORKDIR /app
 
-# Install production dependencies only
+# Only install production dependencies
 COPY package*.json ./
-RUN npm ci --only=production --prefer-offline --no-audit
+RUN npm ci --only=production --prefer-offline --no-audit && npm cache clean --force
 
-# Copy built assets from builder stage
+# Copy required files from builder
 COPY --from=builder /app/dist ./dist
 COPY server.js ./
 COPY routes ./routes
-#COPY config ./config
+# COPY config ./config         # uncomment if exists
+COPY .well-known ./.well-known # ✅ Serve Android asset links
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001 && \
     chown -R nodejs:nodejs /app
-
 USER nodejs
 
-# Expose port
 EXPOSE 5000
 
-# Health check
+# Use curl instead of node for faster healthcheck
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:5000', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
+  CMD wget -qO- http://localhost:5000/ > /dev/null || exit 1
 
-# Start the server
 CMD ["node", "server.js"]

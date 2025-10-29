@@ -2,55 +2,40 @@ version: '3.8'
 
 services:
   dcharcha-web:
+    image: dcharcha.com:latest
+    container_name: dcharcha-landing
     build:
       context: .
       dockerfile: Dockerfile
-    image: dcharcha.com
-    container_name: dcharcha-landing
+      target: production
     restart: unless-stopped
     env_file:
       - .env
     ports:
       - "5000:5000"
 
-    # Resource limits to prevent high CPU usage
     deploy:
       resources:
         limits:
-          cpus: '0.5'        # Limit to 50% of one CPU core
-          memory: 512M        # Limit to 512MB RAM
+          cpus: '0.5'
+          memory: 512M
         reservations:
-          cpus: '0.25'       # Reserve 25% of one CPU core
-          memory: 256M        # Reserve 256MB RAM
+          cpus: '0.25'
+          memory: 256M
 
-    # Security options
     security_opt:
       - no-new-privileges:true
     read_only: false
 
-    # Health check
     healthcheck:
-      test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5000/ > /dev/null || exit 1"]
       interval: 30s
       timeout: 3s
       retries: 3
       start_period: 10s
 
-    # Logging configuration
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
-
-# For production deployment with higher limits
-  # dcharcha-web-prod:
-  #   extends: dcharcha-web
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         cpus: '1.0'
-  #         memory: 1G
-  #       reservations:
-  #         cpus: '0.5'
-  #         memory: 512M
