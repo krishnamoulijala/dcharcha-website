@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.dcharcha.android",
+    "sha256_cert_fingerprints": [
+      "18514CA143B42854A62F5540A67B3CDE6A5F7169387F3EBC07E6346633E8C1A8"
+    ]
+  }
+}]
