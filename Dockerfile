@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package*.json ./
-RUN npm ci --prefer-offline --no-audit
+RUN npm ci --prefer-offline --no-audit && npm cache clean --force
 
 # Copy source code and build
 COPY . .
@@ -28,8 +28,11 @@ RUN npm ci --only=production --prefer-offline --no-audit && npm cache clean --fo
 COPY --from=builder /app/dist ./dist
 COPY server.js ./
 COPY routes ./routes
-# COPY config ./config         # uncomment if exists
-COPY .well-known ./.well-known # ✅ Serve Android asset links
+
+# Copy optional config and .well-known (won’t fail if missing)
+RUN mkdir -p config .well-known
+COPY config ./config/
+COPY .well-known ./.well-known/
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
@@ -39,7 +42,7 @@ USER nodejs
 
 EXPOSE 5000
 
-# Use curl instead of node for faster healthcheck
+# Lightweight healthcheck
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost:5000/ > /dev/null || exit 1
 
