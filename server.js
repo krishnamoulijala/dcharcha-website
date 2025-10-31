@@ -15,11 +15,11 @@ app.use('/api', formSubmitRoute); // POST to /api/submit-form
 app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
 
 // Terms of Service and Privacy Policy routes
-app.get('/tos', (req, res) => {
+app.get('/terms', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'tos.html'));
 });
 
-app.get('/pp', (req, res) => {
+app.get('/privacy', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'pp.html'));
 });
 
