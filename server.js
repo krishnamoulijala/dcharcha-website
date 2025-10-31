@@ -14,6 +14,16 @@ app.use('/api', formSubmitRoute); // POST to /api/submit-form
 // Serve .well-known for Android App Links
 app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
 
+// Terms of Service and Privacy Policy routes
+app.get('/tos', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'tos.html'));
+});
+
+app.get('/pp', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'pp.html'));
+});
+
+
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/{*all}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
