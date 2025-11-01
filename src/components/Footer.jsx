@@ -29,8 +29,7 @@ const Footer = () => {
               <h3 className="text-xl font-bold">Dcharcha</h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
-              A collaborative platform to share ideas, connect with community,
-              and explore knowledge together.
+              Connects citizens with AI-powered tools to visualize, discuss, and improve public spaces together.
             </p>
             <div className="flex gap-3 mt-2">
               {[FaTwitter, FaFacebookF, FaLinkedinIn].map((Icon, idx) => (

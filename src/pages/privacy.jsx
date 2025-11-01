@@ -133,8 +133,8 @@ const PrivacyPolicy = () => {
             </a>
             <br />
             <strong>Website:</strong>{" "}
-            <a href="https://www.dcharcha.in" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
-              www.dcharcha.in
+            <a href="https://www.dcharcha.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
+              www.dcharcha.com
             </a>
           </p>
           <p className="mt-3">
