@@ -170,7 +170,7 @@ const TermsOfService = () => {
           <p>
             🌐 <strong>Website:</strong>{" "}
             <a
-              href="https://www.dcharcha.com"
+              href="https://dcharcha.com"
               target="_blank"
               rel="noreferrer"
               className="text-teal-600 hover:underline"
@@ -231,7 +231,7 @@ const TermsOfService = () => {
           <p className="mt-2">
             © 2025 MAJJI DIGITAL SOLUTIONS PVT. LTD. |{" "}
             <a
-              href="https://www.dcharcha.com"
+              href="https://dcharcha.com"
               target="_blank"
               rel="noreferrer"
               className="text-teal-600 hover:underline"

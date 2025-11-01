@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
             </a>
             <br />
             <strong>Website:</strong>{" "}
-            <a href="https://www.dcharcha.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
+            <a href="https://dcharcha.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
               www.dcharcha.com
             </a>
           </p>
@@ -148,7 +148,7 @@ const PrivacyPolicy = () => {
         <footer className="border-t border-gray-200 mt-10 pt-6 text-center text-gray-500 text-sm">
           © 2025 MAJJI DIGITAL SOLUTIONS PVT. LTD. |{" "}
           <a
-            href="https://www.dcharcha.com"
+            href="https://dcharcha.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-teal-700 hover:underline"
