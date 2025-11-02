@@ -175,7 +175,7 @@ const TermsOfService = () => {
               rel="noreferrer"
               className="text-teal-600 hover:underline"
             >
-              www.dcharcha.com
+              https://dcharcha.com
             </a>
           </p>
           <p>

@@ -129,12 +129,12 @@ const PrivacyPolicy = () => {
           <p>
             <strong>Email:</strong>{" "}
             <a href="mailto:support@dcharcha.in" className="text-teal-700 hover:underline">
-              support@dcharcha.in
+              support@dcharcha.com
             </a>
             <br />
             <strong>Website:</strong>{" "}
             <a href="https://dcharcha.com" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
-              www.dcharcha.com
+              https://dcharcha.com
             </a>
           </p>
           <p className="mt-3">
