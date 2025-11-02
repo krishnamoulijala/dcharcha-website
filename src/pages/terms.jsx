@@ -26,6 +26,7 @@ const TermsOfService = () => {
               { id: "user-content", text: "User Content" },
               { id: "moderation", text: "Moderation" },
               { id: "privacy", text: "Data & Privacy" },
+              { id: "child-safety", text: "Child Safety" },
               { id: "contact", text: "Contact" },
             ].map((item) => (
               <button
@@ -70,9 +71,10 @@ const TermsOfService = () => {
             Definitions | Eligibility & Account Registration | Purpose and Scope
             | User Content & License | AI-Generated Content | Upload Guidelines
             | Code of Conduct | Moderation | Visibility & Third-Party Use | Data
-            & Privacy | Data Retention | IP & Copyright | Third-Party Services |
-            Prohibited Activities | Disclaimers | Termination | Grievance |
-            Changes | Governing Law | Acknowledgement | Contact
+            & Privacy | Child Safety | Data Retention | IP & Copyright |
+            Third-Party Services | Prohibited Activities | Disclaimers |
+            Termination | Grievance | Changes | Governing Law | Acknowledgement
+            | Contact
           </p>
         </section>
 
@@ -153,10 +155,71 @@ const TermsOfService = () => {
           </p>
         </section>
 
+        {/* Child Safety Standards */}
+        <section id="child-safety" className="border-t border-gray-200 pt-6">
+          <h2 className="text-xl font-semibold text-teal-700 border-l-4 border-teal-500 pl-3 mb-3">
+            6. Child Safety and Protection Standards
+          </h2>
+          <p>
+            D'charcha is fully committed to maintaining a safe and secure
+            digital environment for all users, especially minors. We strictly
+            prohibit any form of child sexual abuse or exploitation (CSAE) and
+            have zero tolerance for such materials or behavior on our platform.
+          </p>
+          <h3 className="text-lg font-semibold text-teal-600 mt-4">
+            Our Commitment
+          </h3>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>
+              We prohibit uploading, sharing, or promoting any content involving
+              child sexual abuse or exploitation.
+            </li>
+            <li>
+              We promptly remove and report any suspicious or illegal content
+              that violates child protection laws.
+            </li>
+            <li>
+              Our moderation team receives training to identify, escalate, and
+              act upon CSAE-related content responsibly.
+            </li>
+            <li>
+              We cooperate with law enforcement authorities in India and globally
+              to ensure compliance and rapid response.
+            </li>
+          </ul>
+          <h3 className="text-lg font-semibold text-teal-600 mt-4">
+            Reporting Concerns
+          </h3>
+          <p>
+            If you come across content or behavior that may involve child sexual
+            abuse or exploitation, please report it immediately to our support
+            team at{" "}
+            <a
+              href="mailto:support@dcharcha.com"
+              className="text-teal-600 hover:underline"
+            >
+              support@dcharcha.com
+            </a>
+            . We review and act on all reports within 24 hours.
+          </p>
+          <p className="mt-4">
+            We are dedicated to upholding Google Play’s{" "}
+            <a
+              href="https://support.google.com/googleplay/android-developer/answer/14234897"
+              target="_blank"
+              rel="noreferrer"
+              className="text-teal-600 hover:underline"
+            >
+              Child Safety Standards Policy
+            </a>{" "}
+            and applicable laws to protect children online.
+          </p>
+        </section>
+
         {/* Contact */}
         <section id="contact" className="border-t border-gray-200 pt-6">
           <h2 className="text-xl font-semibold text-teal-700 border-l-4 border-teal-500 pl-3 mb-3">
-            6. Contact Information
+            7. Contact Information
           </h2>
           <p>
             📧 <strong>Email:</strong>{" "}
