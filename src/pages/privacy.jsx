@@ -117,8 +117,8 @@ const PrivacyPolicy = () => {
           </ul>
           <p className="mt-3">
             To exercise these rights, contact{" "}
-            <a href="mailto:support@dcharcha.in" className="text-teal-700 hover:underline">
-              support@dcharcha.in
+            <a href="mailto:support@dcharcha.com" className="text-teal-700 hover:underline">
+              support@dcharcha.com
             </a>{" "}
             or use the in-app settings.
           </p>
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-xl font-bold text-teal-900 mb-3">15. Contact Us</h2>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@dcharcha.in" className="text-teal-700 hover:underline">
+            <a href="mailto:support@dcharcha.com" className="text-teal-700 hover:underline">
               support@dcharcha.com
             </a>
             <br />
