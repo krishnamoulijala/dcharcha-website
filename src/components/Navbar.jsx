@@ -8,10 +8,12 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", to: "hero" },
     { label: "Gallery", to: "gallery" },
-    { label: "How it Works?", to: "pillars" }, // renamed from "Pillars"
+    { label: "How it Works?", to: "pillars" },
     { label: "Impact", to: "civic" },
     { label: "Why Dcharcha", to: "why" },
-    { label: "Share Dream", to: "share" }, // points to "share" section
+    { label: "Share Dream", to: "share" },
+    // ✅ Added FAQs
+    { label: "FAQs", link: "/faq" },
   ];
 
   return (
@@ -27,15 +29,27 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <a
-              key={item.to}
-              href={`#${item.to}`}
-              className="cursor-pointer text-gray-700 hover:text-[#195554] font-medium"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.link ? (
+              <a
+                key={item.label}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-gray-700 hover:text-[#195554] font-medium"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <a
+                key={item.to}
+                href={`#${item.to}`}
+                className="cursor-pointer text-gray-700 hover:text-[#195554] font-medium"
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
 
         {/* Mobile Toggle */}
@@ -50,16 +64,29 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white px-6 py-4 space-y-3 shadow">
-          {navItems.map((item) => (
-            <a
-              key={item.to}
-              href={`#${item.to}`}
-              className="block text-gray-700 hover:text-[#195554] font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.link ? (
+              <a
+                key={item.label}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-700 hover:text-[#195554] font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <a
+                key={item.to}
+                href={`#${item.to}`}
+                className="block text-gray-700 hover:text-[#195554] font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
       )}
     </nav>

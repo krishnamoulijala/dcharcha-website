@@ -1,9 +1,8 @@
 import React from "react";
-import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/Dcharcha_Logo-01.webp";
 import termsPDF from "../assets/Terms_of_Service.pdf";
 import privacyPDF from "../assets/Privacy_Policy.pdf";
-import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -91,25 +90,37 @@ const Footer = () => {
                   Privacy Policy
                 </a>
               </li>
+              <li>
+                <a
+                  href="/faq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  FAQs
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Optional - Contact or Newsletter section */}
+          {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <p className="text-sm text-gray-400 mb-2">info@dcharcha.com</p>
             <p className="text-sm text-gray-400 flex items-center gap-2">
-  <FaWhatsapp className="text-green-500 text-xl" />
-  +91- 9908996747
-</p>
-
+              <FaWhatsapp className="text-green-500 text-xl" />
+              +91- 9908996747
+            </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-6 text-center text-xs sm:text-sm text-gray-500">
           &copy; 2025 MAJJI DIGITAL SOLUTIONS PVT. LTD. |{" "}
-          <a href="https://dcharcha.com/">Dcharcha</a> All copy rights reserved.
+          <a href="https://dcharcha.com/" className="hover:text-white">
+            Dcharcha
+          </a>{" "}
+          All copy rights reserved.
         </div>
       </div>
     </footer>
