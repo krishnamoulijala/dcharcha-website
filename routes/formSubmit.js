@@ -22,10 +22,10 @@ router.post('/submit-form', async (req, res) => {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
-      range: 'Sheet1!A:C', // or whatever range
+      range: 'Sheet1!A:D', // or whatever range
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, phone]],
+        values: [[name, email, phone, new Date().toISOString()]],
       },
     });
 
