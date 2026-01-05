@@ -52,40 +52,47 @@ export default function ShareDream() {
         {[
           {
             img: "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg",
-            label: null,
+            label: "Available",
             link: "https://play.google.com/store/apps/details?id=com.dcharcha.android",
           },
           {
             img: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
             label: "Coming Soon",
-            link: null,
           },
         ].map((item, index) => {
-          const Tag = item.link ? "a" : "div";
-          const props = item.link
-              ? {
-                href: item.link,
-                target: "_blank",
-                rel: "noopener noreferrer",
-              }
-              : {};
+          const commonClasses = "flex flex-col items-center backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-[240px]";
+
+          if (item.link) {
+            return (
+                <a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={commonClasses}
+                >
+                  <img
+                      src={item.img}
+                      alt={item.label}
+                      className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
+                  />
+                  <span className="text-sm text-gray-600 mt-4">{item.label}</span>
+                </a>
+            );
+          }
 
           return (
-              <Tag
+              <div
                   key={index}
-                  {...props}
-                  className={`flex flex-col items-center backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-[240px] ${item.link ? "cursor-pointer" : ""
-                  }`}
+                  className={commonClasses}
               >
                 <img
                     src={item.img}
-                    alt={item.label || "App Store Badge"}
-                    className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
+                    alt={item.label}
+                    className="w-36 sm:w-40 md:w-48"
                 />
-                {item.label && (
-                    <span className="text-sm text-gray-600 mt-3">{item.label}</span>
-                )}
-              </Tag>
+                <span className="text-sm text-gray-600 mt-3">{item.label}</span>
+              </div>
           );
         })}
       </div>

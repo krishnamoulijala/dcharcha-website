@@ -185,8 +185,7 @@ export default function HeroSection() {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-300 ${
-                  currentSlide === index
+                className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-300 ${currentSlide === index
                     ? "bg-indigo-600"
                     : "bg-gray-300 hover:bg-gray-400"
                 }`}
@@ -197,18 +196,21 @@ export default function HeroSection() {
 
           {/* App Store Badges */}
           <div className="mt-8 sm:mt-10 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start items-center">
-              <a
-                  href="https://play.google.com/store/apps/details?id=com.dcharcha.android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center hover:scale-105 transition-transform duration-300"
-              >
+            <a
+                href="https://play.google.com/store/apps/details?id=com.dcharcha.android"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center"
+            >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png"
                 alt="Get it on Google Play"
-                className="w-36 sm:w-44 h-auto cursor-pointer"
+                className="w-36 sm:w-44 h-auto"
               />
-              </a>
+              <span className="text-xs sm:text-sm mt-1 text-gray-600">
+                Available
+              </span>
+            </a>
             <div className="flex flex-col items-center">
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
