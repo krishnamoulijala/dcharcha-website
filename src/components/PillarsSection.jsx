@@ -8,27 +8,28 @@ import {
 
 const pillars = [
   {
-    title: "Express",
-    subheading: "Upload a photo and describe your dream",
+    title: "Envision",
+    subheading: "Upload a real issue. Reimagine a better future.",
     description:
-      "Your vision starts here. Speak your mind freely — share your dreams, stories, and ideas that deserve to be heard.",
+      "Your journey begins with vision. Capture a real civic problem—broken roads, unsafe streets, neglected spaces—and use AI to visualize how it should look. Turn everyday issues into powerful Dream Worlds that inspire change.",
     icon: MegaphoneIcon,
   },
   {
     title: "Engage",
-    subheading: "Discuss with your community and leaders",
+    subheading: "Discuss with your community and decision-makers",
     description:
-      "Spark conversations that matter. Collaborate, react, and explore voices around you to build meaningful connections.",
+      "Great ideas grow through dialogue. Engage with citizens, volunteers, experts, and leaders to discuss, validate, and refine visions. Build collective understanding and momentum around what truly matters locally.",
     icon: HandRaisedIcon,
   },
   {
     title: "Empower",
-    subheading: "Get resources to act and transform spaces",
+    subheading: "Transform ideas into real-world action",
     description:
-      "Turn ideas into impact. Access tools, support, and inspiration to bring your dream projects to life.",
+      "Move from vision to impact. Access insights, dashboards, and partnerships that help turn validated ideas into pilots, projects, and policy actions—bridging citizens and authorities to create lasting change.",
     icon: SparklesIcon,
   },
 ];
+
 
 export default function PillarsSection() {
   const handleScroll = () => {
@@ -57,7 +58,7 @@ export default function PillarsSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-lg sm:text-2xl font-semibold text-[#005555] mb-6"
         >
-          The 3E Model — Express • Engage • Empower
+          The 3E Model — Envision • Engage • Empower
         </motion.h3>
 
         <motion.p
@@ -66,9 +67,8 @@ export default function PillarsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-gray-600 mb-12 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
         >
-          Dcharcha turns ideas into action through a simple, inspiring 3-step
-          journey. Express what you believe in, engage with your community, and
-          empower change that truly matters.
+          Dcharcha bridges vision and reality through a simple three-step journey. Envision how your city could be better, engage voices that matter, and empower ideas to drive meaningful, lasting change.
+
         </motion.p>
 
         {/* Pillars Grid */}
