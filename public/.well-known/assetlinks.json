@@ -1,10 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.dcharcha.android",
-    "sha256_cert_fingerprints": [
-      "18514CA143B42854A62F5540A67B3CDE6A5F7169387F3EBC07E6346633E8C1A8"
-    ]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dcharcha.android",
+      "sha256_cert_fingerprints": [
+        "34:BA:B6:E8:1A:3B:F2:82:24:5F:A1:EE:10:9C:B1:74:3D:BA:DF:F3:13:89:FF:80:06:C8:26:1F:00:EA:D3:E8"
+      ]
+    }
   }
-}]
+]
