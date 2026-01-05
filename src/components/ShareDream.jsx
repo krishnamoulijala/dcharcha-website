@@ -1,10 +1,5 @@
-import { useState } from "react";
-import {
-  RocketLaunchIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  UserIcon,
-} from "@heroicons/react/24/outline";
+import {useState} from "react";
+import {EnvelopeIcon, PhoneIcon, RocketLaunchIcon, UserIcon,} from "@heroicons/react/24/outline";
 
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 
@@ -57,25 +52,42 @@ export default function ShareDream() {
         {[
           {
             img: "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg",
-            label: "Coming Soon",
+            label: null,
+            link: "https://play.google.com/store/apps/details?id=com.dcharcha.android",
           },
           {
             img: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
             label: "Coming Soon",
+            link: null,
           },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-[240px]"
-          >
-            <img
-              src={item.img}
-              alt={item.label}
-              className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
-            />
-            <span className="text-sm text-gray-600 mt-3">{item.label}</span>
-          </div>
-        ))}
+        ].map((item, index) => {
+          const Tag = item.link ? "a" : "div";
+          const props = item.link
+              ? {
+                href: item.link,
+                target: "_blank",
+                rel: "noopener noreferrer",
+              }
+              : {};
+
+          return (
+              <Tag
+                  key={index}
+                  {...props}
+                  className={`flex flex-col items-center backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-6 border border-gray-100 hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-[240px] ${item.link ? "cursor-pointer" : ""
+                  }`}
+              >
+                <img
+                    src={item.img}
+                    alt={item.label || "App Store Badge"}
+                    className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
+                />
+                {item.label && (
+                    <span className="text-sm text-gray-600 mt-3">{item.label}</span>
+                )}
+              </Tag>
+          );
+        })}
       </div>
 
       {/* BETA ACCESS SECTION */}
