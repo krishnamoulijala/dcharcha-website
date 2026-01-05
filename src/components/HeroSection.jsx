@@ -1,9 +1,6 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-} from "react-compare-slider";
+import {useEffect, useRef, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
+import {ReactCompareSlider, ReactCompareSliderImage,} from "react-compare-slider";
 import before from "../assets/before3.jpeg";
 import after from "../assets/after3.jpeg";
 
@@ -200,16 +197,18 @@ export default function HeroSection() {
 
           {/* App Store Badges */}
           <div className="mt-8 sm:mt-10 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start items-center">
-            <div className="flex flex-col items-center">
+              <a
+                  href="https://play.google.com/store/apps/details?id=com.dcharcha.android"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center hover:scale-105 transition-transform duration-300"
+              >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png"
-                alt="Play Store Coming Soon"
-                className="w-36 sm:w-44 h-auto"
+                alt="Get it on Google Play"
+                className="w-36 sm:w-44 h-auto cursor-pointer"
               />
-              <span className="text-xs sm:text-sm mt-1 text-gray-600">
-                Coming Soon
-              </span>
-            </div>
+              </a>
             <div className="flex flex-col items-center">
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
