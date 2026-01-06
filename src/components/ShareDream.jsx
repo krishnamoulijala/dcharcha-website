@@ -12,7 +12,7 @@ export default function ShareDream() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({...prev, [e.target.name]: e.target.value}));
   };
 
   const handleSubmit = async (e) => {
@@ -20,13 +20,13 @@ export default function ShareDream() {
     try {
       const res = await fetch(`${backendURL}/api/submit-form`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {"Content-Type": "application/json"},
         body: JSON.stringify(formData),
       });
 
       if (res.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", phone: "" });
+        setFormData({name: "", email: "", phone: ""});
       } else alert("Submission failed. Please try again.");
     } catch (err) {
       console.error(err);
@@ -64,43 +64,44 @@ export default function ShareDream() {
 
           if (item.link) {
             return (
-                <a
-                    key={index}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={commonClasses}
-                >
-                  <img
-                      src={item.img}
-                      alt={item.label}
-                      className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
-                  />
-                  <span className="text-sm text-gray-600 mt-4">{item.label}</span>
-                </a>
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={commonClasses}
+              >
+                <img
+                  src={item.img}
+                  alt={item.label}
+                  className="w-36 sm:w-40 md:w-48 hover:scale-105 transition-transform"
+                />
+                <span className="text-sm text-gray-600 mt-4">{item.label}</span>
+              </a>
             );
           }
 
           return (
-              <div
-                  key={index}
-                  className={commonClasses}
-              >
-                <img
-                    src={item.img}
-                    alt={item.label}
-                    className="w-36 sm:w-40 md:w-48"
-                />
-                <span className="text-sm text-gray-600 mt-3">{item.label}</span>
-              </div>
+            <div
+              key={index}
+              className={commonClasses}
+            >
+              <img
+                src={item.img}
+                alt={item.label}
+                className="w-36 sm:w-40 md:w-48"
+              />
+              <span className="text-sm text-gray-600 mt-3">{item.label}</span>
+            </div>
           );
         })}
       </div>
 
       {/* BETA ACCESS SECTION */}
-      <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 max-w-4xl mx-auto border border-gray-100">
+      <div
+        className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 max-w-4xl mx-auto border border-gray-100">
         <div className="flex justify-center mb-5 sm:mb-6">
-          <RocketLaunchIcon className="h-8 sm:h-10 w-8 sm:w-10 text-[#005555]" />
+          <RocketLaunchIcon className="h-8 sm:h-10 w-8 sm:w-10 text-[#005555]"/>
         </div>
 
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
@@ -118,7 +119,7 @@ export default function ShareDream() {
           >
             {/* NAME FIELD */}
             <div className="relative w-full sm:w-[45%] md:w-[22%]">
-              <UserIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
+              <UserIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500"/>
               <input
                 type="text"
                 name="name"
@@ -132,7 +133,7 @@ export default function ShareDream() {
 
             {/* EMAIL FIELD */}
             <div className="relative w-full sm:w-[45%] md:w-[22%]">
-              <EnvelopeIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
+              <EnvelopeIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500"/>
               <input
                 type="email"
                 name="email"
@@ -146,7 +147,7 @@ export default function ShareDream() {
 
             {/* PHONE FIELD */}
             <div className="relative w-full sm:w-[45%] md:w-[22%]">
-              <PhoneIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500" />
+              <PhoneIcon className="absolute left-3 top-3.5 h-5 w-5 text-gray-500"/>
               <input
                 type="tel"
                 name="phone"
