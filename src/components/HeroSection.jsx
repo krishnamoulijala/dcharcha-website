@@ -71,15 +71,16 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-12 py-10 overflow-hidden isolate">
-      <div className="absolute inset-0 -z-10 pointer-events-none opacity-10" />
+    <section
+      className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-12 py-10 overflow-hidden isolate">
+      <div className="absolute inset-0 -z-10 pointer-events-none opacity-10"/>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 lg:gap-16">
         {/* LEFT: Compare Slider / Image */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{opacity: 0, x: -40}}
+          animate={{opacity: 1, x: 0}}
+          transition={{duration: 1}}
           className="flex justify-center items-center w-full"
         >
           <div className="w-full max-w-2xl h-[300px] sm:h-[360px] md:h-[420px] lg:h-[480px] relative">
@@ -89,8 +90,8 @@ export default function HeroSection() {
                   key="before"
                   src={before}
                   alt="Before"
-                  initial={{ opacity: 1, scale: 1 }}
-                  animate={{ opacity: 0, scale: 1.05 }}
+                  initial={{opacity: 1, scale: 1}}
+                  animate={{opacity: 0, scale: 1.05}}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
@@ -103,8 +104,8 @@ export default function HeroSection() {
                   key="after"
                   src={after}
                   alt="After"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{opacity: 0, scale: 0.95}}
+                  animate={{opacity: 1, scale: 1}}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
@@ -142,18 +143,18 @@ export default function HeroSection() {
 
         {/* RIGHT: Text Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          initial={{opacity: 0, y: 30}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1.2, ease: "easeOut"}}
           className="text-center md:text-left px-2 sm:px-6 md:px-4 lg:px-8 max-w-2xl mx-auto"
         >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.5 }}
+              initial={{opacity: 0, y: 10}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0, y: -10}}
+              transition={{duration: 0.5}}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
                 {slideTexts[currentSlide].title}
@@ -168,7 +169,7 @@ export default function HeroSection() {
                   <button
                     onClick={() => {
                       const el = document.getElementById("share-dream");
-                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                      if (el) el.scrollIntoView({behavior: "smooth"});
                     }}
                     className="px-6 py-3 text-base sm:text-lg text-white bg-green-600 hover:bg-green-700 rounded-xl shadow transition"
                   >
@@ -186,8 +187,8 @@ export default function HeroSection() {
                 key={index}
                 onClick={() => handleDotClick(index)}
                 className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-300 ${currentSlide === index
-                    ? "bg-indigo-600"
-                    : "bg-gray-300 hover:bg-gray-400"
+                  ? "bg-indigo-600"
+                  : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Slide ${index + 1}`}
               />
@@ -197,10 +198,10 @@ export default function HeroSection() {
           {/* App Store Badges */}
           <div className="mt-8 sm:mt-10 flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start items-center">
             <a
-                href="https://play.google.com/store/apps/details?id=com.dcharcha.android"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
+              href="https://play.google.com/store/apps/details?id=com.dcharcha.android"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png"
